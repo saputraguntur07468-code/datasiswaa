@@ -13,22 +13,24 @@
     <!-- BAGIAN 1: CSS (TAMPILAN) -->
     <style>
         :root {
-            --bg: #eef2f7;
+            --bg: #f7eef3;
             --kartu: #ffffff;
             --teks: #14213d;
             --teks-redup: #5b667a;
             --garis: #d6dde8;
             --aksen: #1d4ed8;
+
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg: #0e1522;
-                --kartu: #172033;
-                --teks: #e8edf6;
-                --teks-redup: #98a4ba;
+                --bg: #f7cadd;
+                --kartu: #fbb1bd;
+                --teks: #000;
+                --teks-redup: #252525;
                 --garis: #2a3650;
-                --aksen: #6c9bff;
+                --aksen: #0b58ff;
+    
             }
         }
 
@@ -116,7 +118,7 @@
 
         .pita {
             height: 56px;
-            background: hsl(var(--hue) 65% 45%);
+            background: #ff85a1;
         }
 
         .isi {
@@ -205,8 +207,8 @@
     <!-- BAGIAN 2: HTML (KERANGKA HALAMAN) -->
     <div class="wadah">
         <header>
-            <h1>Biodata Siswa</h1>
-            <p>Cari siswa berdasarkan nama atau NIS.</p>
+            <h1>Teknik Komputer dan Jaringan</h1>
+            <p>Data Guru/Siswa</p>
         </header>
 
         <div class="kontrol">
@@ -232,13 +234,9 @@
     <!-- BAGIAN 3: JAVASCRIPT (LOGIKA) -->
     <script>
         // LANGKAH 1: PENGATURAN
-        // Ganti dua nilai ini dengan milik 
-       
-    
-     const SUPABASE_URL="https://fogjnvcsqmfdfslrihlw.supabase.co";
-
-    
-        const SUPABASE_ANON_KEY = "sb_publishable_KOFxUyAIY0c1u4MHp86a6Q_AC2iAcMU";
+        // Ganti dua nilai ini dengan milik projectmu.
+        const SUPABASE_URL = "https://lrcqmfojorrtnhnsufyr.supabase.co";
+        const SUPABASE_ANON_KEY = "sb_publishable_koQMsXJ0Frd2MBU4_a6V_A_z1lP9QQg";
 
         // Pilih data pribadi mana yang boleh tampil.
         // true = tampil, false = disembunyikan.
@@ -331,7 +329,7 @@
         // Membuat satu kartu dari satu baris data siswa.
         function buatKartu(s) {
             const kartu = el("article", "kartu");
-            kartu.style.setProperty("--hue", warnaKelas(s.kelas));
+            kartu.style.setProperty("--kartuAtas", warnaKelas(s.kelas));
 
             kartu.appendChild(el("div", "pita"));
 
@@ -484,4 +482,4 @@
         muatData();
     </script>
 </body>
-      </html>
+</html>
